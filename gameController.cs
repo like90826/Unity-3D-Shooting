@@ -33,6 +33,7 @@ public class gameController : MonoBehaviour
 	private int orbspawnwait;
 	private int cubespawnwait;
 	//private bool ifgameover;
+	private scoretrack s = new scoretrack();
 
 
 	void Start ()
@@ -65,9 +66,11 @@ public class gameController : MonoBehaviour
 				orbRate += 1;
 				cubeRate += 1;
 				distance += 1;
-				distanceDisplay.text = "Distance: " + distance.ToString () + " km";
+				//distanceDisplay.text = "Distance: " + distance.ToString () + " km";
+				distanceDisplay.text = "Your Score " + scoretrack.score.ToString ();
 				if (gameControllerObject == null) {
-					gameOverDisplay.text = "Game Over\nYou Have traveled " + distance.ToString () + " km !";
+					//gameOverDisplay.text = "Game Over\nYour Score is " + distance.ToString () + " km !";
+					gameOverDisplay.text = "Game Over\nYour Score is " + scoretrack.score.ToString ();
 					restartButton.SetActive (true);
 					backToManualButton.SetActive (true);
 					Debug.Log (gameControllerObject.name);
